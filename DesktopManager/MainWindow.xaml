@@ -32,7 +32,7 @@
                   BorderThickness="3" Margin="10 0">
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <ItemsWrapGrid /> j<!--Highlight-->
+                    <ItemsWrapGrid /> <!--Highlight-->
                 </ItemsPanelTemplate>
             </GridView.ItemsPanel>
             <GridView.ItemTemplate>
