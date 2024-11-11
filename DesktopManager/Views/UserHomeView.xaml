@@ -13,7 +13,7 @@
             <RowDefinition Height="8*"/>
             <RowDefinition />
         </Grid.RowDefinitions >
-        <Grid Background="{x:Bind UserHomeViewModel.DesktopBackgroundColor}"></Grid>
-        <Grid Grid.Row="1" Background="{x:Bind UserHomeViewModel.TaskBarBackgroundColor}"></Grid>
+        <Grid Background="{x:Bind UserHomeViewModel.DesktopBackgroundColor, Mode=OneWay}"></Grid>
+        <Grid Grid.Row="1" Background="{x:Bind UserHomeViewModel.TaskBarBackgroundColor, Mode=OneWay}"></Grid>
     </Grid>
 </UserControl>
