@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="DesktopManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:DesktopManager"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:userHome="using:DesktopManager.ViewModels"
+        xmlns:userHomeViews="using:DesktopManager.Views"
+        mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <GridView ItemsSource="{x:Bind MainViewModel.KioskCollection, Mode=OneWay}"
+                  Header="StackPanel Works"
+                  BorderBrush="Black" BorderThickness="3">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="userHome:UserHomeViewModel">
+                    <userHomeViews:UserHomeView UserHomeViewModel="{x:Bind}" />
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <GridView ItemsSource="{x:Bind MainViewModel.KioskCollection, Mode=OneWay}"
+                  Header="ItemsWrapGrid does not work" 
+                  BorderBrush="Black"
+                  BorderThickness="3" Margin="10 0">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="userHome:UserHomeViewModel">
+                    <userHomeViews:UserHomeView UserHomeViewModel="{x:Bind}" />
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </StackPanel>
+</Window>
